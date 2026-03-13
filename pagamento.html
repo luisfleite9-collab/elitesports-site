@@ -1,19 +1,37 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Elite Sport - Pagamento</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* Estilo para manter o padrão visual do botão voltar */
+        .btn-voltar-link {
+            display: inline-block;
+            text-decoration: none;
+            color: #7CFC00;
+            font-weight: bold;
+            font-size: 14px;
+            margin-bottom: 20px;
+            transition: 0.3s;
+        }
+        .btn-voltar-link:hover {
+            text-shadow: 0 0 10px #7CFC00;
+            transform: translateX(-5px);
+        }
+    </style>
 </head>
 <body>
 <section id="pagamento-section" class="full-section">
     <div class="form-box">
+        <a href="carrinho.html" class="btn-voltar-link">← VOLTAR AO CARRINHO</a>
+
         <h2>Forma de Pagamento</h2>
 
         <div class="metodos-pagamento">
 
-            <a href="#pix-section" class="metodo-card-link">
+            <a href="pix.html" class="metodo-card-link">
                 <div class="metodo-card pix-destaque">
                     <span class="badge">RECOMENDADO</span>
                     <p>Pagar com <strong>PIX</strong></p>
@@ -21,7 +39,7 @@
                 </div>
             </a>
 
-            <a href="#cartao-section" class="metodo-card-link">
+            <a href="cartao.html" class="metodo-card-link">
                 <div class="metodo-card">
                     <p>Pagar com <strong>CARTÃO DE CRÉDITO</strong></p>
                     <small>Até 12x sem juros</small>
@@ -31,11 +49,11 @@
         </div>
 
         <div class="switch-link">
-            <a href="#carrinho-section">← Voltar ao carrinho</a>
+            <p>Dúvidas na compra? <a href="index.html" class="link-neon">Falar com suporte</a></p>
         </div>
     </div>
 </section>
-    <body>
-        <script src="script.js"></script>
+
+<script src="script.js"></script>
 </body>
 </html>
