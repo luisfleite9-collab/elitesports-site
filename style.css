@@ -1,0 +1,492 @@
+/* ================= RESET ================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #000;
+    color: #fff;
+    font-family: 'Montserrat', sans-serif;
+    overflow-x: hidden;
+}
+
+
+/* ================= HEADER ================= */
+
+.header-bar {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    background-color: rgba(0,0,0,0.95);
+    padding: 15px 40px;
+    border-bottom: 4px solid #7CFC00;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.logo {
+    text-align: center;
+    font-size: 24px;
+    font-weight: 900;
+    text-decoration: none;
+    color: white;
+}
+
+.logo span {
+    color: #7CFC00;
+}
+
+.header-right {
+    justify-self: end;
+    display: flex;
+    gap: 10px;
+}
+
+
+/* ================= BOTÕES ================= */
+
+.btn-neon {
+    background: #7CFC00;
+    color: #000;
+    font-weight: 900;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: 0.3s;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    display: inline-block;
+}
+
+.btn-neon:hover {
+    background: #65cc00;
+    box-shadow: 0 0 15px #7CFC00;
+    transform: scale(1.05);
+}
+
+.btn-small {
+    padding: 8px 15px;
+    font-size: 12px;
+}
+
+.btn-large {
+    padding: 15px;
+    font-size: 1rem;
+    width: 100%;
+    margin-top: 15px;
+}
+
+
+/* ================= SEÇÕES ================= */
+
+.full-section {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 120px 20px 60px;
+}
+
+.section-dark {
+    background-color: #0a0a0a;
+}
+
+section {
+    scroll-margin-top: 100px;
+}
+
+
+/* ================= FORMULÁRIOS ================= */
+
+.form-box {
+    background-color: #000;
+    border: 2px solid #7CFC00;
+    border-radius: 12px;
+    padding: 40px;
+    width: 100%;
+    max-width: 400px;
+}
+
+.carrinho-box {
+    max-width: 600px;
+}
+
+.form-box h2 {
+    text-align: center;
+    margin-bottom: 25px;
+    text-transform: uppercase;
+    font-weight: 900;
+}
+
+.titulo-verde {
+    color: #7CFC00;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+}
+
+.input-group label {
+    color: #7CFC00;
+    font-size: 11px;
+    font-weight: 900;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+}
+
+.input-group input,
+.input-group select {
+    background: #111;
+    border: 1px solid #333;
+    color: white;
+    padding: 12px;
+    border-radius: 4px;
+    outline: none;
+}
+
+.input-group input:focus,
+.input-group select:focus {
+    border-color: #7CFC00;
+    box-shadow: 0 0 5px #7CFC00;
+}
+
+
+/* Linha dupla (Validade + CVV) */
+.linha-dupla {
+    display: flex;
+    gap: 10px;
+}
+
+.flex-2 { flex: 2; }
+.flex-1 { flex: 1; }
+
+
+/* ================= LOGIN ================= */
+
+.login-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 13px;
+    margin-bottom: 15px;
+}
+
+.link-neon {
+    color: #7CFC00;
+    font-weight: 700;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.link-neon:hover {
+    color: #65cc00;
+    text-decoration: underline;
+}
+
+.switch-link {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 13px;
+    color: #aaa;
+}
+
+.switch-link a {
+    color: #7CFC00;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+
+/* ================= HERO ================= */
+
+.hero-fullscreen {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 0 80px;
+    position: relative;
+}
+
+.hero-text-box {
+    z-index: 10;
+    max-width: 600px;
+}
+
+.hero-text-box h1 {
+    font-size: 5rem;
+    font-weight: 900;
+    line-height: 0.9;
+}
+
+.hero-text-box h1 span {
+    color: #7CFC00;
+}
+
+.hero-text-box p {
+    margin: 20px 0;
+}
+
+.hero-btn {
+    max-width: 300px;
+}
+
+.hero-image-box {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 60%;
+    height: 100%;
+}
+
+.hero-image-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(50%) brightness(0.6);
+}
+
+.gradient-overlay {
+    position: absolute;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(to right, #000, transparent);
+    z-index: 1;
+}
+
+
+/* ================= CATÁLOGO ================= */
+
+#catalogo-section {
+    padding: 120px 40px;
+    background: #050505;
+}
+
+.titulo-catalogo {
+    text-align: center;
+    font-size: 3rem;
+    font-weight: 900;
+    margin-bottom: 40px;
+}
+
+.container-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.card {
+    background: #111;
+    border: 1px solid #222;
+    padding: 20px;
+    text-align: center;
+    transition: 0.3s;
+    border-radius: 8px;
+}
+
+.card:hover {
+    border-color: #7CFC00;
+    transform: translateY(-5px);
+}
+
+.card img {
+    width: 100%;
+    height: 180px;
+    object-fit: contain;
+    margin-bottom: 15px;
+}
+
+.preco-antigo {
+    text-decoration: line-through;
+    color: #555;
+    font-size: 12px;
+}
+
+.preco {
+    color: #7CFC00;
+    font-size: 1.5rem;
+    font-weight: 900;
+    margin-bottom: 10px;
+}
+
+
+/* ================= CARRINHO ================= */
+
+.item-carrinho {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    background: #1a1a1a;
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid #333;
+    margin-bottom: 20px;
+}
+
+.item-carrinho img {
+    width: 80px;
+}
+
+.item-info p {
+    margin: 3px 0;
+}
+
+.resumo-carrinho {
+    text-align: right;
+    margin: 20px 0;
+}
+
+.resumo-carrinho hr {
+    border: 1px solid #333;
+    margin: 10px 0;
+}
+
+.frete-gratis {
+    color: #7CFC00;
+}
+
+.total {
+    font-size: 1.5rem;
+    font-weight: 900;
+}
+
+
+/* ================= PAGAMENTO ================= */
+
+.metodos-pagamento {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.metodo-card-link {
+    text-decoration: none;
+    color: inherit;
+}
+
+.metodo-card {
+    background: #1a1a1a;
+    padding: 20px;
+    border-radius: 10px;
+    border: 2px solid #333;
+    transition: 0.3s;
+    cursor: pointer;
+    position: relative;
+}
+
+.metodo-card:hover {
+    border-color: #7CFC00;
+    transform: translateY(-3px);
+}
+
+.pix-destaque {
+    border-color: #7CFC00;
+    background: #1a2e0a;
+}
+
+.badge {
+    position: absolute;
+    top: -10px;
+    right: 10px;
+    background: #7CFC00;
+    color: #000;
+    font-size: 10px;
+    padding: 4px 10px;
+    font-weight: 900;
+    border-radius: 20px;
+}
+
+
+/* ================= PIX ================= */
+
+.qr-container {
+    background: white;
+    padding: 15px;
+    display: inline-block;
+    border-radius: 10px;
+    margin: 20px 0;
+}
+
+.pix-codigo-copia {
+    display: flex;
+    gap: 5px;
+    margin-top: 10px;
+}
+
+.pix-codigo-copia input {
+    flex: 1;
+    background: #222;
+    border: 1px solid #444;
+    color: #eee;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+
+/* ================= CONFIRMAÇÃO ================= */
+
+.success-box {
+    border-top: 5px solid #7CFC00;
+    text-align: center;
+}
+
+.check-icon {
+    font-size: 4rem;
+    color: #7CFC00;
+    margin-bottom: 10px;
+}
+
+.order-number {
+    background: #222;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 20px 0;
+}
+
+.order-number h3 {
+    font-size: 1.8rem;
+    color: #7CFC00;
+    letter-spacing: 2px;
+}
+
+/* ===== CORREÇÃO CARTÃO ESTOURANDO ===== */
+
+#cartao-section .form-box {
+    max-width: 420px;
+    width: 100%;
+}
+
+#cartao-section .linha-dupla {
+    display: flex;
+    gap: 10px;
+    width: 100%;
+}
+
+#cartao-section .flex-2,
+#cartao-section .flex-1 {
+    min-width: 0; /* evita estourar */
+}
+
+#cartao-section input,
+#cartao-section select {
+    width: 100%;
+}
+
+.form-box {
+    overflow: hidden; /* impede qualquer vazamento */
+}

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elite Sport - Login</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Estilo rápido para o botão de voltar se não estiver no seu CSS */
+        .btn-voltar {
+            display: block;
+            text-decoration: none;
+            color: #7CFC00; /* Verde Neon */
+            font-size: 14px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            transition: 0.3s;
+        }
+        .btn-voltar:hover {
+            text-shadow: 0 0 10px #7CFC00;
+            transform: translateX(-5px);
+        }
+    </style>
+</head>
+<body>
+
+<section id="login-section" class="full-section">
+    <div class="form-box">
+        <a href="index.html" class="btn-voltar">← VOLTAR PARA O INÍCIO</a>
+
+        <h2>Acesse sua conta</h2>
+
+        <div class="input-group">
+            <label for="email">E-mail</label>
+            <input type="email" id="email" placeholder="Digite seu e-mail">
+        </div>
+
+        <div class="input-group">
+            <label for="password">Senha</label>
+            <input type="password" id="password" placeholder="Digite sua senha">
+        </div>
+
+        <div class="login-options">
+            <label><input type="checkbox"> Lembrar de mim</label>
+            <a href="#" class="link-neon">Esqueceu a senha?</a>
+        </div>
+
+        <button id="btn-entrar" class="btn-neon btn-large">ENTRAR</button>
+
+        <div class="switch-link">
+            <p>Não tem uma conta?</p>
+            <a href="cadastro.html" id="btn-ir-cadastro" class="btn-neon btn-small">CADASTRAR-SE</a>
+        </div>
+    </div>
+</section>
+
+<script src="script.js"></script>
+</body>
+</html>
