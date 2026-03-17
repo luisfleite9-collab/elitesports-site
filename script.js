@@ -1,15 +1,15 @@
 /**
- * ELITE SPORT - Script Oficial v1.1
- * Centralizado e Corrigido
+ * ELITE SPORT - Script Oficial v1.2
+ * Centralizado, Corrigido e com Validação de Cadastro e Cartão
  */
 
 const EliteSport = {
-    // Inicializador
+    // Inicializador - Roda todas as funções ao carregar a página
     init: function() {
         this.logicaLogin();
-        this.logicaCadastro();
+        this.logicaCadastro(); // Validação de campos de cadastro adicionada aqui
         this.logicaPix();
-        this.logicaCartao(); // Agora inicializado corretamente
+        this.logicaCartao(); 
         this.logicaGeral();
     },
 
@@ -31,9 +31,12 @@ const EliteSport = {
         }
     },
 
-    // 2. Lógica da tela de Cadastro (Máscara de CEP)
+    // 2. Lógica da tela de Cadastro (Máscara de CEP e Validação de Dados)
     logicaCadastro: function() {
         const inputCep = document.querySelector('input[placeholder="00000-000"]');
+        const btnCadastrar = document.querySelector('#cadastro-section .btn-neon, #cadastro-section .btn-large');
+
+        // Máscara de CEP
         if (inputCep) {
             inputCep.addEventListener('input', (e) => {
                 let value = e.target.value.replace(/\D/g, ''); 
@@ -41,6 +44,29 @@ const EliteSport = {
                     value = value.replace(/^(\d{5})(\d)/, '$1-$2');
                 }
                 e.target.value = value;
+            });
+        }
+
+        // --- NOVA VALIDAÇÃO DE CADASTRO ---
+        if (btnCadastrar) {
+            btnCadastrar.addEventListener('click', (e) => {
+                // Seleciona todos os inputs da tela de cadastro
+                const inputs = document.querySelectorAll('#cadastro-section input');
+                let algumVazio = false;
+
+                // Verifica se algum input está vazio
+                inputs.forEach(input => {
+                    if (input.value.trim() === "") {
+                        algumVazio = true;
+                    }
+                });
+
+                if (algumVazio) {
+                    e.preventDefault(); // Impede o envio ou mudança de página
+                    alert("⚠️ Por favor, preencha todos os dados de cadastro.");
+                } else {
+                    console.log("Cadastro preenchido corretamente!");
+                }
             });
         }
     },
@@ -77,16 +103,14 @@ const EliteSport = {
         const inputNumero = document.querySelector('input[placeholder="0000 0000 0000 0000"]');
         const inputValidade = document.querySelector('input[placeholder="MM/AA"]');
 
-        // Adiciona Máscara ao número do cartão (0000 0000...)
         if (inputNumero) {
             inputNumero.addEventListener('input', (e) => {
                 let v = e.target.value.replace(/\D/g, '');
-                v = v.replace(/(\d{4})(?=\d)/g, '$1 '); // Espaço a cada 4 dígitos
-                e.target.value = v.substring(0, 19); // Limita tamanho
+                v = v.replace(/(\d{4})(?=\d)/g, '$1 '); 
+                e.target.value = v.substring(0, 19); 
             });
         }
 
-        // Adiciona Máscara à validade (MM/AA)
         if (inputValidade) {
             inputValidade.addEventListener('input', (e) => {
                 let v = e.target.value.replace(/\D/g, '');
@@ -95,14 +119,13 @@ const EliteSport = {
             });
         }
 
-        // Validação ao clicar em Confirmar
         if (btnConfirmar) {
             btnConfirmar.addEventListener('click', (e) => {
                 const numero = document.querySelector('input[placeholder="0000 0000 0000 0000"]').value;
                 const nome = document.querySelector('input[placeholder="NOME COMO NO CARTÃO"]').value;
                 const validade = document.querySelector('input[placeholder="MM/AA"]').value;
                 const cvv = document.querySelector('input[placeholder="123"]').value;
-                const parcelas = document.querySelector('select').value;
+                const parcelas = document.querySelector('select') ? document.querySelector('select').value : true;
 
                 if (!numero || !nome || !validade || !cvv || !parcelas) {
                     e.preventDefault(); 
@@ -114,7 +137,7 @@ const EliteSport = {
         }
     },
 
-    // 5. Lógica Geral (Catálogo)
+    // 5. Lógica Geral (Botões Adicionar)
     logicaGeral: function() {
         const botoesAdicionar = document.querySelectorAll('.btn-small');
         botoesAdicionar.forEach(botao => {
@@ -127,7 +150,7 @@ const EliteSport = {
     }
 };
 
-// Execução Única
+// Dispara o inicializador quando o HTML estiver pronto
 document.addEventListener('DOMContentLoaded', () => {
     EliteSport.init();
 });
