@@ -1,0 +1,129 @@
+/* ================= 1. RESET E BASE ================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #000;
+    color: #fff;
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* ================= 2. ESTRUTURA DA SEÇÃO ================= */
+.full-section {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* ================= 3. BOX DE SUCESSO ================= */
+.form-box {
+    background-color: #000;
+    border: 2px solid #7CFC00;
+    border-radius: 12px;
+    padding: 50px 40px;
+    width: 100%;
+    max-width: 450px;
+    text-align: center; /* Centraliza todo o conteúdo interno */
+    box-shadow: 0 0 30px rgba(124, 252, 0, 0.15);
+}
+
+/* Ícone de Check Animado */
+.check-icon {
+    width: 80px;
+    height: 80px;
+    border: 3px solid #7CFC00;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
+    color: #7CFC00;
+    margin: 0 auto 25px;
+    box-shadow: 0 0 15px rgba(124, 252, 0, 0.3);
+    animation: popIn 0.5s cubic-bezier(0.26, 0.53, 0.74, 1.48);
+}
+
+.titulo-verde {
+    color: #7CFC00;
+    font-size: 1.8rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+/* ================= 4. NÚMERO DO PEDIDO ================= */
+.order-number {
+    background: #111;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 30px;
+    border: 1px dashed #333;
+}
+
+.order-number p {
+    font-size: 12px;
+    color: #888;
+    letter-spacing: 2px;
+    margin-bottom: 8px;
+}
+
+.order-number h3 {
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+/* ================= 5. BOTÃO ================= */
+.btn-neon {
+    background: #7CFC00;
+    color: #000;
+    font-weight: 900;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: 0.3s;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    display: inline-block;
+}
+
+.btn-large {
+    padding: 18px;
+    font-size: 1rem;
+    width: 100%;
+}
+
+.btn-neon:hover {
+    background: #3cff00;
+    box-shadow: 0 0 20px #1eff00;
+    transform: scale(1.02);
+}
+
+/* ================= 6. ANIMAÇÃO SIMPLES ================= */
+@keyframes popIn {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Responsividade */
+@media (max-width: 480px) {
+    .form-box {
+        padding: 40px 20px;
+    }
+    
+    .titulo-verde {
+        font-size: 1.5rem;
+    }
+}

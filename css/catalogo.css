@@ -1,0 +1,151 @@
+/* ================= 1. RESET E BASE ================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #000;
+    color: #fff;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.section-dark {
+    background-color: #050505;
+    padding: 60px 20px;
+}
+
+/* ================= 2. BOTÃO VOLTAR ================= */
+.btn-voltar-container {
+    padding: 20px 40px;
+    background-color: #000;
+}
+
+.btn-voltar-link {
+    text-decoration: none;
+    color: #7CFC00;
+    font-weight: 900;
+    font-size: 13px;
+    text-transform: uppercase;
+    transition: 0.3s;
+}
+
+.btn-voltar-link:hover {
+    color: #fff;
+    text-shadow: 0 0 10px #7CFC00;
+}
+
+/* ================= 3. TÍTULO DO CATÁLOGO ================= */
+.titulo-catalogo {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 900;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+    color: #fff;
+}
+
+/* ================= 4. GRADE DE PRODUTOS (GRID) ================= */
+.container-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* ================= 5. CARD DE PRODUTO ================= */
+.card {
+    background: #111;
+    border: 1px solid #222;
+    padding: 20px;
+    text-align: center;
+    transition: 0.3s ease;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card:hover {
+    border-color: #7CFC00;
+    transform: translateY(-8px);
+    box-shadow: 0 10px 20px rgba(124, 252, 0, 0.1);
+}
+
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: contain; /* Garante que a chuteira apareça inteira */
+    margin-bottom: 15px;
+    filter: brightness(0.9);
+    transition: 0.3s;
+}
+
+.card:hover img {
+    filter: brightness(1.1);
+    transform: scale(1.05);
+}
+
+.card .titulo {
+    font-weight: 700;
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+    color: #eee;
+}
+
+.preco-antigo {
+    text-decoration: line-through;
+    color: #666;
+    font-size: 0.9rem;
+    margin-bottom: 5px;
+}
+
+.preco {
+    color: #7CFC00;
+    font-size: 1.5rem;
+    font-weight: 900;
+    margin-bottom: 15px;
+}
+
+/* ================= 6. BOTÃO NEON ================= */
+.btn-neon {
+    background: #7CFC00;
+    color: #000;
+    font-weight: 900;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: 0.3s;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.btn-small {
+    padding: 10px 20px;
+    font-size: 0.8rem;
+    width: 100%; /* Botão ocupa a largura do card */
+}
+
+.btn-neon:hover {
+    background: #3cff00;
+    box-shadow: 0 0 15px #1eff00;
+}
+
+/* ================= 7. RESPONSIVIDADE ================= */
+@media (max-width: 600px) {
+    .titulo-catalogo {
+        font-size: 1.8rem;
+    }
+    
+    .container-grid {
+        grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+        gap: 15px;
+    }
+
+    .card img {
+        height: 150px;
+    }
+}

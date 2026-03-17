@@ -1,0 +1,163 @@
+/* ================= 1. RESET E BASE (Essencial) ================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #000;
+    color: #fff;
+    font-family: 'Montserrat', sans-serif;
+    overflow-x: hidden;
+}
+
+/* ================= 2. HEADER ================= */
+.header-bar {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.95);
+    padding: 15px 40px;
+    border-bottom: 4px solid #80ff00;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.logo {
+    text-align: center;
+    font-size: 24px;
+    font-weight: 900;
+    text-decoration: none;
+    color: white;
+}
+
+.logo span {
+    color: #80ff00;
+}
+
+.header-right {
+    justify-self: end;
+    display: flex;
+    gap: 10px;
+}
+
+/* ================= 3. BOTÕES (Estilo Neon) ================= */
+.btn-neon {
+    background: #7CFC00;
+    color: #000000;
+    font-weight: 900;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: 0.3s;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    display: inline-block;
+}
+
+.btn-neon:hover {
+    background: #3cff00;
+    box-shadow: 0 0 15px #1eff00;
+    transform: scale(1.05);
+}
+
+.btn-small {
+    padding: 8px 15px;
+    font-size: 12px;
+}
+
+.btn-large {
+    padding: 15px;
+    font-size: 1rem;
+    width: 100%;
+    margin-top: 15px;
+}
+
+/* ================= 4. SEÇÃO HERO (Principal) ================= */
+.hero-fullscreen {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 0 80px;
+    position: relative;
+    background-color: #000;
+}
+
+.hero-text-box {
+    z-index: 10;
+    max-width: 600px;
+}
+
+.hero-text-box h1 {
+    font-size: 5rem;
+    font-weight: 900;
+    line-height: 0.9;
+    text-transform: uppercase;
+}
+
+.hero-text-box h1 span {
+    color: #7CFC00;
+}
+
+.hero-text-box p {
+    margin: 20px 0;
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+}
+
+.hero-btn {
+    max-width: 300px;
+}
+
+/* Imagem de Fundo e Efeitos */
+.hero-image-box {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 60%;
+    height: 100%;
+}
+
+.hero-image-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(50%) brightness(0.6);
+}
+
+.gradient-overlay {
+    position: absolute;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(to right, #000, transparent);
+    z-index: 1;
+}
+
+/* Responsividade Básica */
+@media (max-width: 768px) {
+    .hero-fullscreen {
+        padding: 0 20px;
+        text-align: center;
+        justify-content: center;
+    }
+    .hero-text-box h1 {
+        font-size: 3rem;
+    }
+    .hero-image-box {
+        width: 100%;
+        opacity: 0.4;
+    }
+    .gradient-overlay {
+        width: 100%;
+        background: linear-gradient(to top, #000, transparent);
+    }
+}

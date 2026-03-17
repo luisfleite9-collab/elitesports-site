@@ -1,0 +1,133 @@
+/* ================= 1. RESET E BASE ================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #000;
+    color: #fff;
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* ================= 2. ESTRUTURA DA SEÇÃO ================= */
+.full-section {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+}
+
+.section-dark {
+    background-color: #000;
+}
+
+/* ================= 3. BOX DO FORMULÁRIO ================= */
+.form-box {
+    background-color: #000;
+    border: 2px solid #7CFC00;
+    border-radius: 12px;
+    padding: 40px;
+    width: 100%;
+    max-width: 450px;
+    box-shadow: 0 0 20px rgba(124, 252, 0, 0.1);
+}
+
+.titulo-verde {
+    color: #7CFC00;
+    text-align: center;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    font-weight: 900;
+}
+
+/* ================= 4. INPUTS E LABELS ================= */
+.input-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    color: #7CFC00;
+    font-size: 11px;
+    font-weight: 900;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.input-group input, 
+.input-group select {
+    background: #000;
+    border: 1px solid #333;
+    color: #fff;
+    padding: 12px;
+    border-radius: 4px;
+    outline: none;
+    font-family: 'Montserrat', sans-serif;
+    transition: 0.3s;
+}
+
+.input-group input:focus, 
+.input-group select:focus {
+    border-color: #7CFC00;
+    box-shadow: 0 0 8px rgba(124, 252, 0, 0.4);
+}
+
+/* Estilo específico para o Select (Seta) */
+.input-group select {
+    cursor: pointer;
+    appearance: none; /* Remove estilo padrão do sistema */
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%237CFC00' viewBox='0 0 16 16'%3E%3Cpath d='M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 15px center;
+    padding-right: 40px;
+}
+
+/* ================= 5. LINHA DUPLA (VALIDADE E CVV) ================= */
+.linha-dupla {
+    display: flex;
+    gap: 15px;
+}
+
+.flex-2 { flex: 2; } /* Validade ocupa mais espaço */
+.flex-1 { flex: 1; } /* CVV ocupa menos espaço */
+
+/* ================= 6. BOTÃO ================= */
+.btn-neon {
+    background: #7CFC00;
+    color: #000;
+    font-weight: 900;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: 0.3s;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    display: inline-block;
+    margin-top: 10px;
+}
+
+.btn-large {
+    padding: 18px;
+    font-size: 1rem;
+    width: 100%;
+}
+
+.btn-neon:hover {
+    background: #3cff00;
+    box-shadow: 0 0 20px #1eff00;
+    transform: scale(1.02);
+}
+
+/* Responsividade para telas muito pequenas */
+@media (max-width: 400px) {
+    .linha-dupla {
+        flex-direction: column;
+        gap: 0;
+    }
+}

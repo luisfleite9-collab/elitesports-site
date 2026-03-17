@@ -1,0 +1,163 @@
+/* ================= 1. RESET E BASE ================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #000;
+    color: #fff;
+    font-family: 'Montserrat', sans-serif;
+    overflow-x: hidden;
+}
+
+/* ================= 2. ESTRUTURA DA SEÇÃO ================= */
+.full-section {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+    background-color: #000;
+}
+
+/* ================= 3. BOX DO FORMULÁRIO ================= */
+.form-box {
+    background-color: #000;
+    border: 2px solid #7CFC00;
+    border-radius: 12px;
+    padding: 40px;
+    width: 100%;
+    max-width: 400px;
+    box-shadow: 0 0 20px rgba(124, 252, 0, 0.1);
+}
+
+.form-box h2 {
+    text-align: center;
+    margin-bottom: 25px;
+    text-transform: uppercase;
+    font-weight: 900;
+    color: #fff;
+}
+
+/* ================= 4. INPUTS E LABELS ================= */
+.input-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    color: #7CFC00;
+    font-size: 11px;
+    font-weight: 900;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+}
+
+.input-group input {
+    background: #000000;
+    border: 1px solid #333;
+    color: #fff;
+    padding: 12px;
+    border-radius: 4px;
+    outline: none;
+    transition: 0.3s;
+}
+
+.input-group input:focus {
+    border-color: #7CFC00;
+    box-shadow: 0 0 8px rgba(124, 252, 0, 0.4);
+}
+
+/* ================= 5. OPÇÕES (CHECKBOX E LINK) ================= */
+.login-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 13px;
+    margin-bottom: 25px;
+}
+
+.login-options label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+}
+
+.link-neon {
+    color: #7CFC00;
+    font-weight: 700;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.link-neon:hover {
+    text-shadow: 0 0 5px #7CFC00;
+    text-decoration: underline;
+}
+
+/* ================= 6. BOTÕES ================= */
+.btn-neon {
+    background: #7CFC00;
+    color: #000;
+    font-weight: 900;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: 0.3s;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    display: inline-block;
+}
+
+.btn-neon:hover {
+    background: #3cff00;
+    box-shadow: 0 0 15px #1eff00;
+    transform: scale(1.02);
+}
+
+.btn-large {
+    padding: 15px;
+    font-size: 1rem;
+    width: 100%;
+}
+
+.btn-small {
+    padding: 8px 15px;
+    font-size: 11px;
+    margin-top: 10px;
+}
+
+/* Botão Voltar */
+.btn-voltar {
+    display: inline-block;
+    text-decoration: none;
+    color: #7CFC00;
+    font-weight: 900;
+    font-size: 12px;
+    margin-bottom: 20px;
+    transition: 0.3s;
+}
+
+.btn-voltar:hover {
+    color: #fff;
+    transform: translateX(-5px);
+}
+
+/* ================= 7. RODAPÉ (SWITCH LINK) ================= */
+.switch-link {
+    text-align: center;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #222;
+}
+
+.switch-link p {
+    font-size: 13px;
+    color: #888;
+    margin-bottom: 5px;
+}

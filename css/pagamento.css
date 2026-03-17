@@ -1,0 +1,132 @@
+/* ================= 1. RESET E BASE ================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #000;
+    color: #fff;
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* ================= 2. ESTRUTURA DA SEÇÃO ================= */
+.full-section {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background-color: #000;
+}
+
+/* ================= 3. BOX DO FORMULÁRIO ================= */
+.form-box {
+    background-color: #000;
+    border: 2px solid #7CFC00;
+    border-radius: 12px;
+    padding: 40px;
+    width: 100%;
+    max-width: 450px;
+    box-shadow: 0 0 20px rgba(124, 252, 0, 0.1);
+}
+
+.form-box h2 {
+    color: #fff;
+    text-align: center;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    font-weight: 900;
+    font-size: 1.5rem;
+}
+
+/* ================= 4. CARDS DE MÉTODOS DE PAGAMENTO ================= */
+.metodos-pagamento {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.metodo-card-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+.metodo-card {
+    background: #111;
+    border: 1px solid #333;
+    padding: 25px 20px;
+    border-radius: 8px;
+    position: relative;
+    transition: 0.3s ease;
+    cursor: pointer;
+}
+
+.metodo-card:hover {
+    border-color: #7CFC00;
+    background: #0a0a0a;
+    transform: scale(1.02);
+}
+
+.metodo-card p {
+    font-size: 14px;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+}
+
+.metodo-card strong {
+    color: #7CFC00;
+}
+
+.metodo-card small {
+    color: #888;
+    font-size: 12px;
+}
+
+/* Destaque para o PIX (Recomendado) */
+.pix-destaque {
+    border: 1px solid #7CFC00;
+    box-shadow: 0 0 10px rgba(124, 252, 0, 0.1);
+}
+
+.badge {
+    position: absolute;
+    top: -10px;
+    right: 15px;
+    background: #7CFC00;
+    color: #000;
+    font-size: 10px;
+    font-weight: 900;
+    padding: 4px 10px;
+    border-radius: 20px;
+}
+
+/* ================= 5. SUPORTE E LINKS ================= */
+.switch-link {
+    text-align: center;
+    font-size: 13px;
+    color: #888;
+}
+
+.link-neon {
+    color: #7CFC00;
+    text-decoration: none;
+    font-weight: 900;
+    margin-left: 5px;
+    transition: 0.3s;
+}
+
+.link-neon:hover {
+    text-shadow: 0 0 8px #7CFC00;
+    text-decoration: underline;
+}
+
+/* Responsividade */
+@media (max-width: 480px) {
+    .form-box {
+        padding: 30px 20px;
+    }
+}
