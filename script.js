@@ -1,13 +1,13 @@
 /**
- * ELITE SPORT - Script Oficial v1.2
- * Centralizado, Corrigido e com Validação de Cadastro e Cartão
+ * ELITE SPORT - Script Oficial v1.3
+ * Centralizado, Corrigido e com Validação de Login, Cadastro e Cartão
  */
 
 const EliteSport = {
     // Inicializador - Roda todas as funções ao carregar a página
     init: function() {
         this.logicaLogin();
-        this.logicaCadastro(); // Validação de campos de cadastro adicionada aqui
+        this.logicaCadastro();
         this.logicaPix();
         this.logicaCartao(); 
         this.logicaGeral();
@@ -22,18 +22,22 @@ const EliteSport = {
                 const senha = document.getElementById('password').value;
 
                 if (!email || !senha) {
+                    // Impede o redirecionamento se os campos estiverem vazios
+                    e.preventDefault(); 
                     alert("⚠️ Por favor, preencha todos os campos para entrar.");
                 } else {
                     console.log("Login efetuado com sucesso!");
+                    // Redireciona manualmente para garantir que a validação passou
                     window.location.href = "index.html";
                 }
             });
         }
     },
 
-    // 2. Lógica da tela de Cadastro (Máscara de CEP e Validação de Dados)
+    // 2. Lógica da tela de Cadastro (Máscara de CEP e Validação)
     logicaCadastro: function() {
         const inputCep = document.querySelector('input[placeholder="00000-000"]');
+        // Seleciona o botão de cadastro dentro da section correta
         const btnCadastrar = document.querySelector('#cadastro-section .btn-neon, #cadastro-section .btn-large');
 
         // Máscara de CEP
@@ -47,14 +51,12 @@ const EliteSport = {
             });
         }
 
-        // --- NOVA VALIDAÇÃO DE CADASTRO ---
+        // Validação de campos vazios no Cadastro
         if (btnCadastrar) {
             btnCadastrar.addEventListener('click', (e) => {
-                // Seleciona todos os inputs da tela de cadastro
                 const inputs = document.querySelectorAll('#cadastro-section input');
                 let algumVazio = false;
 
-                // Verifica se algum input está vazio
                 inputs.forEach(input => {
                     if (input.value.trim() === "") {
                         algumVazio = true;
@@ -62,10 +64,10 @@ const EliteSport = {
                 });
 
                 if (algumVazio) {
-                    e.preventDefault(); // Impede o envio ou mudança de página
+                    e.preventDefault(); 
                     alert("⚠️ Por favor, preencha todos os dados de cadastro.");
                 } else {
-                    console.log("Cadastro preenchido corretamente!");
+                    console.log("Cadastro preenchido com sucesso!");
                 }
             });
         }
@@ -103,6 +105,7 @@ const EliteSport = {
         const inputNumero = document.querySelector('input[placeholder="0000 0000 0000 0000"]');
         const inputValidade = document.querySelector('input[placeholder="MM/AA"]');
 
+        // Máscara Número do Cartão
         if (inputNumero) {
             inputNumero.addEventListener('input', (e) => {
                 let v = e.target.value.replace(/\D/g, '');
@@ -111,6 +114,7 @@ const EliteSport = {
             });
         }
 
+        // Máscara Validade (MM/AA)
         if (inputValidade) {
             inputValidade.addEventListener('input', (e) => {
                 let v = e.target.value.replace(/\D/g, '');
@@ -119,6 +123,7 @@ const EliteSport = {
             });
         }
 
+        // Validação Final do Cartão
         if (btnConfirmar) {
             btnConfirmar.addEventListener('click', (e) => {
                 const numero = document.querySelector('input[placeholder="0000 0000 0000 0000"]').value;
